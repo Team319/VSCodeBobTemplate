@@ -15,7 +15,7 @@ public class Pneumatics extends Subsystem {
 
 	private Compressor compressor = new Compressor(0);
 
-	private DoubleSolenoid sampleSolenoid = new DoubleSolenoid(0, 1);
+	private DoubleSolenoid sampleSolenoid = new DoubleSolenoid(2, 3);
 
 	public void initDefaultCommand() {
 		setDefaultCommand(new CompressorRun());
@@ -32,11 +32,12 @@ public class Pneumatics extends Subsystem {
 
 	public void sampleSolenoidExtend() {
 		this.sampleSolenoid.set(DoubleSolenoid.Value.kForward);
-		Robot.sampleSubsystem.setSampleSolenoidExtended(true);
+		Robot.sampleSubsytem.setSampleSolenoidExtended(true);
 	}
 
-	public void sampleSOlenoidRetract() {
+	public void sampleSolenoidRetract() {
 		this.sampleSolenoid.set(DoubleSolenoid.Value.kReverse);
-		Robot.sampleSubsystem.setSampleSolenoidExtended(false);
+		Robot.sampleSubsytem.setSampleSolenoidExtended(false);
 	}
+
 }

@@ -8,7 +8,7 @@
 package org.usfirst.frc.team319.robot;
 
 import org.usfirst.frc.team319.controllers.BobXboxController;
-import org.usfirst.frc.team319.robot.commands.SampleCommands.SampleCommand;
+import org.usfirst.frc.team319.robot.commands.robot.SampleCommand;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -23,12 +23,6 @@ public class OI {
 		operatorController = new BobXboxController(1, 0.10, 0.1);
 
 		// ----Driver Controller---- \\
-
-		driverController.rightTriggerButton.whenPressed(new SampleCommand());
-
-		// ----Operator Controller---- \\
-
-		driverController.rightTriggerButton.whenPressed(new SampleCommand());
-
+		driverController.aButton.whenPressed(new SampleCommand());
 	}
 }

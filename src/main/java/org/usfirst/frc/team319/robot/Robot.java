@@ -28,7 +28,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 public class Robot extends TimedRobot {
 
 	Command autonomousCommand;
-	public static final SampleSubsystem sampleSubsystem = new SampleSubsystem();
+	public static final SampleSubsystem sampleSubsytem = new SampleSubsystem();
 	public static final Limelight limelight = new Limelight();
 	public static final Pneumatics pneumatics = new Pneumatics();
 	public static final Drivetrain drivetrain = new Drivetrain();
@@ -41,10 +41,7 @@ public class Robot extends TimedRobot {
 	@Override
 	public void robotInit() {
 		oi = new OI();
-		limelight.setStreamType();// sets secondary as the main camera feed.
-		Robot.drivetrain.setDrivetrainPositionToZero();
-
-		// CameraServer.getInstance().startAutomaticCapture();
+		limelight.setStreamType();
 	}
 
 	@Override
@@ -81,6 +78,7 @@ public class Robot extends TimedRobot {
 			autonomousCommand.cancel();
 		}
 		limelight.setStreamType();// sets secondary as the main camera feed.
+
 	}
 
 	/**
